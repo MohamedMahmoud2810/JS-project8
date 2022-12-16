@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Data</title>
+
+    <style>
+        #users-list {
+        display: block;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        text-align: center;
+        list-style: none;
+        }
+
+        #users-list img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <ul id="users-list"></ul>
+
+    <script>
+        const usersList = document.getElementById("users-list");
+
+        const getData = async (url) => {
+        const res = await fetch(url);
+        const resData = await res.json();
+
+        showData(resData.data);
+        
+    };
+
+        const showData = (data) => {
+        data.forEach((user) => {
+            let item = `<li><h3>${user.first_name}</h3><img src="${user.avatar}" alt="${user.first_name} ${user.last_name}" /></li>`;
+            let item2 = `<li><h3>${user.email}</h3></li>`;
+
+            usersList.innerHTML += item;
+            usersList.innerHTML += item2;
+        });
+    };
+
+        getData("https://reqres.in/api/users?page=2");
+    </script>
+</body>
+</html>

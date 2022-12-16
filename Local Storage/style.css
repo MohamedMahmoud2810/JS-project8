@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 600px;
+    background-color:#888686;
+    margin: 200px 450px;
+    
+}
+.container .tasks{
+    padding: 15px;
+    background-color: #009688;
+    position: relative;
+    margin-bottom: 150px;
+}
+.input {
+    display: inline-block ;
+    padding: 10px 15px;
+    border: none;
+    background-color: rgb(38, 185, 215);
+    width: 70%;
+    color: white;
+    font-size: 25px;
+}
+
+.input:focus{
+    outline: none;
+}
+.addButton{
+    position: absolute;
+    height: 48px;
+    background-color: #fff;
+    right: 480px;
+    width: 180px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #8fc7b2;
+    color: white;
+}
+.addButton:hover{
+    width: 200px;
+    transition: .5s;
+}
+.tasks{
+    padding: 15px;
+}
+.tasks >span{
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+}
+.tasks >span:not(:last-child){
+    margin-bottom: 10px;
+}
+.task-box .delete{
+    float: right;
+    background-color: #E91E63;
+    padding: 4px 10px ;
+    color:  white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.task-box .done{
+    float: right;
+    background-color: #117528;
+    padding: 4px 10px ;
+    margin-right: 4px;
+    color:  white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.task-box .finish{
+    background-color: #5b5e5e;
+
+}
